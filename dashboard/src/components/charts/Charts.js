@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { BarChart, Bar,  XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
 import '../charts/charts.scss'
 
 const data = [
@@ -50,7 +50,6 @@ const data = [
 function Charts() {
   return (
 <>
-      {/* <ResponsiveContainer width="100%" height="100%" > */}
         <BarChart
           width={1700}
           height={800}
@@ -58,7 +57,6 @@ function Charts() {
           margin={{
             top: 50,
             right: 80,
-            // left: 0,
             bottom: 10,
           }}
         >
@@ -66,11 +64,8 @@ function Charts() {
           <XAxis dataKey="name"  />
           <YAxis width={80} />
           <Legend />
-          {/* <Tooltip  /> */}
           <Bar dataKey="pv" fill="#8884d8" barSize={90} />
-          {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
         </BarChart>
-       {/* </ResponsiveContainer> */}
        </>
   )
 }

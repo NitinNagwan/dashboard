@@ -5,30 +5,30 @@
 
 
     .sidebar_top{
-        height: 13.5px;
+        height: 28px;
         padding: 25px;
         background-color: #172e6d;
         color: #eee;
         font-weight: 800;
-        font-size: 30px;
+        font-size: 20px;
         cursor: pointer;
     }
     .main{
         padding: 27px;
-
+        font-size: 10px;
         .upper_heading{
             display: flex;
             align-items: center;
             .icon{
-                font-size: 30px;
+                font-size: 20px;
                 color: #eee;
                 line-height: 10px;
             }
             span{
                 color: #eee;
                 font-weight: 800;
-                font-size: 25px;  
-                margin-top: 9px;
+                font-size: 18px;  
+                // margin-top: 9px;
                 margin-left: 4px;
                 line-height: 20px;
             }
@@ -42,7 +42,7 @@
             color: #eee;
             opacity: .7;
             padding: 14px;
-            font-weight: 700;
+            font-weight: 500;
             display: block;
             margin-right: 12px;
             cursor: pointer;
@@ -54,6 +54,7 @@
 
             span{
                 margin-left: 40px;
+                font-size: 17px;
             }
         }
     }
