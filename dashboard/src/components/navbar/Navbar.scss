@@ -1,17 +1,20 @@
-.navbar{
-    background-color: #172e6d !important;
-    box-shadow: none !important;
-    z-index: 2 !important;
-    // width: 100% !important;
-    
+.navbar {
+  background-color: #f1f4fa !important;
+  box-shadow: none !important;
+  z-index: 2 !important;
 
-    .avtar{
-        background-color: rgba(91, 76, 104, 0.767);
+  .avtar {
+    background-color: rgba(102, 80, 122, 0.767);
+  }
+
+  .menu {
+    &:hover {
+      color: rgba(235, 232, 238, 0.767) !important;
     }
 
-    .menu{
-        &:hover{
-        color:rgba(243, 241, 245, 0.767) !important;
-        }
+    .tooltip_items {
+      display: flex;
+      text-align: center;
     }
+  }
 }

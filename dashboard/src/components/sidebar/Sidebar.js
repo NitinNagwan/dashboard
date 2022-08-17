@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../sidebar/Sidebar.scss";
 import StackedBarChartIcon from "@mui/icons-material/StackedBarChart";
-import { Box, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 const arr = [
   "Main",
   "Manage Claims",
@@ -23,7 +23,7 @@ function Sidebar() {
     setActive(name);
   };
   return (
-    <div className="sidebar" sx={{display: {xs: 'none'}}}>
+    <div className="sidebar">
       <div className="sidebar_top"> DashBoard </div>
      
         <div className="main">
