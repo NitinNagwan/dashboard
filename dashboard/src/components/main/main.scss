@@ -9,67 +9,28 @@
   .form_inputs {
     font-size: 13px;
     display: flex;
-    .label{
-        font-size: 13px;
-        color: rgb(129, 127, 127);
+    .label {
+      font-size: 13px;
+      color: rgb(129, 127, 127);
     }
-    .select{
-        color: rgb(88, 86, 86);
-        font-weight: 500;
+    .select {
+      color: rgb(88, 86, 86);
+      font-weight: 500;
     }
-    // .form_input {
-    //   margin-left: 15px;
-    //   p {
-    //     opacity: 0.9;
-    //     text-transform: capitalize;
-    //   }
-    //   .label {
-    //     width: 160px;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-between;
-    //     outline: 1px solid transparent;
-    //     -webkit-transition: all 0.2s ease-in-out;
-    //     transition: all 0.2s ease-in-out;
-    //     border-bottom: 3px solid transparent;
-    //     padding: 8px 0;
-    //     .input {
-    //       padding-left: 3px;
-    //       background: transparent;
-    //       font-size: 14px;
-    //       font-weight: bolder;
-    //       color: rgb(150, 149, 149);
-    //     }
-    //     .icon {
-    //       color: rgb(150, 149, 149);
-    //     }
-
-    //     &:hover {
-    //       outline: 0px solid transparent;
-    //       -webkit-transition: all 0.2s ease-in-out;
-    //       transition: all 0.2s ease-in-out;
-    //       border-bottom: 3px solid rgb(5, 5, 5);
-    //     }
-    //   }
-    // }
   }
 }
 
 .seperator {
-  // width: 100%;
   display: flex;
   align-items: center;
   margin: 10px 0 0px 0px;
 
-  // h1{
-  //     font-size: 20px;
-  // }
   .horizontal_line {
-    width: 90%;
+    width: 100%;
     height: 2px;
     padding: 1px;
     background-color: rgb(17, 90, 226);
     margin-left: 10px;
-    // color: #4c47ac;
+
   }
 }

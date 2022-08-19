@@ -39,23 +39,97 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static" className="navbar">
-      <Toolbar
-        disableGutters
-        sx={{ mr: { xs: "40px", md: "70px", cursor: "pointer" } }}
-      >
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: { xs: "flex", md: "flex" },
-            alignItems: "center",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Avatar
+    // <AppBar position="static" className="navbar">
+    //   <Toolbar
+    //     disableGutters
+    //     sx={{ mr: { xs: "40px", md: "70px", cursor: "pointer" } }}
+    //   >
+    //     <Box
+    //       sx={{
+    //         flexGrow: 1,
+    //         display: { xs: "flex", md: "flex" },
+    //         alignItems: "center",
+    //         justifyContent: "flex-end",
+    //       }}
+    //     >
+    //       <Avatar
+    //         sx={{
+    //           width: { xs: "40px", md: "45px" },
+    //           height: { xs: "40px", md: "45px" },
+    //         }}
+    //         className="avtar"
+    //       ></Avatar>
+
+    //       <Tooltip
+    //         title=""
+    //         placement="bottom-start"
+    //         onClick={handleOpenUserMenu}
+    //       >
+    //         <Typography
+    //           sx={{
+    //             fontSize: { xs: "18px", md: "23px" },
+    //             color: "#000",
+    //             ml: "7px",
+    //             mt: "10px",
+    //             fontWeight: "500",
+    //           }}
+    //         >
+    //           Nitin Nagwan
+    //         </Typography>
+    //       </Tooltip>
+    //       <Tooltip
+    //         title=""
+    //         placement="bottom-start"
+    //         onClick={handleOpenUserMenu}
+    //       >
+    //         <KeyboardArrowDownIcon sx={{ color: "darkgrey" }} />
+    //       </Tooltip>
+    //       <Menu
+    //         sx={{ mt: "45px" }}
+    //         id="menu-appbar"
+    //         className="menu"
+    //         anchorEl={anchorElUser}
+    //         anchorOrigin={{
+    //           vertical: "top",
+    //           horizontal: "left",
+    //         }}
+    //         keepMounted
+    //         transformOrigin={{
+    //           vertical: "top",
+    //           horizontal: "left",
+    //         }}
+    //         open={Boolean(anchorElUser)}
+    //         onClose={handleCloseUserMenu}
+    //       >
+    //         {settings.map((setting) => (
+    //           <MenuItem
+    //             key={setting.name}
+    //             onClick={handleCloseUserMenu}
+    //             className="tooltip_items"
+    //           >
+    //             <Typography
+    //               sx={{
+    //                 width: "170px",
+    //                 fontWeight: "500",
+    //                 fontSize: "20px",
+    //                 p: "6px",
+    //               }}
+    //             >
+    //               {setting.name}
+    //             </Typography>
+    //           </MenuItem>
+    //         ))}
+    //       </Menu>
+    //     </Box>
+    //   </Toolbar>
+    // </AppBar>
+
+    <>
+    <Avatar
             sx={{
-              width: { xs: "40px", md: "45px" },
-              height: { xs: "40px", md: "45px" },
+              width: { xs: "30px", md: "37px" },
+              height: { xs: "30px", md: "37px" },
+              backgroundColor: 'rgba(102, 80, 122, 0.767)'
             }}
             className="avtar"
           ></Avatar>
@@ -67,7 +141,7 @@ const ResponsiveAppBar = () => {
           >
             <Typography
               sx={{
-                fontSize: { xs: "18px", md: "23px" },
+                fontSize: { xs: "19px", md: "23px" },
                 color: "#000",
                 ml: "7px",
                 mt: "10px",
@@ -82,7 +156,7 @@ const ResponsiveAppBar = () => {
             placement="bottom-start"
             onClick={handleOpenUserMenu}
           >
-            <KeyboardArrowDownIcon sx={{ color: "darkgrey" }} />
+            <KeyboardArrowDownIcon sx={{ color: "darkgrey", fontWeight: "bold" }} />
           </Tooltip>
           <Menu
             sx={{ mt: "45px" }}
@@ -120,9 +194,7 @@ const ResponsiveAppBar = () => {
               </MenuItem>
             ))}
           </Menu>
-        </Box>
-      </Toolbar>
-    </AppBar>
+    </>
   );
 };
 export default ResponsiveAppBar;

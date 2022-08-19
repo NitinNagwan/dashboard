@@ -1,13 +1,31 @@
-.home{
-    // font-size: 20px;
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
-    .main_content{
-        height: 100vh;
-        // background-color: lightgray;
-        flex: 5;
-        overflow-y: scroll;
-        
-    }
+// .home{
+//     // display: flex;
+//     // justify-content: baseline;
+//     // align-items: center;
+//     .main_content{
+//         height: 100vh;
+//         flex: 5;
+//         overflow-y: scroll;
+
+//     }
+// }
+// .container{
+//     .nav{
+//         .drawer{
+// .MuiPaper-root{
+//     background: linear-gradient(240deg, #325da8a4 40%, #3355b3 70%);
+//                 .div{
+
+//                     .header{
+//                         padding: 10px !important;
+//                         background-color: #2312e2;
+//                     }
+//                 }
+//             }
+
+//         }
+//     }
+// }
+.MuiPaper-root {
+  background: linear-gradient(240deg, #325da8a4 40%, #3355b3 70%);
 }

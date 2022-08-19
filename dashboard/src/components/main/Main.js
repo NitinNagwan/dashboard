@@ -170,7 +170,6 @@ function Main() {
             );
           })}
           {input2.map((input, index) => {
-            // console.log(input.content)
             return (
               <FormControl
                 key={input.label}
@@ -250,94 +249,12 @@ function Main() {
               </FormControl>
             );
           })}
-
-          {/* <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <Typography></Typography>
-            <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
-              value={age}
-              onChange={handleChange}
-              label="Age"
-            >
-              <MenuItem value="All">
-                <em>All</em>
-              </MenuItem>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl> */}
-          {/* <Tooltip title="" placement="bottom-start"> */}
-          {/* <div className="form_input">
-              <p>Select Type</p>
-              <div htmlFor="title" className="label">
-                <div
-                  id="title"
-                  name="title"
-                  type="text"
-                  placeholder="All"
-                  className="input"
-                >ALL</div>
-                <KeyboardArrowDownIcon className="icon" />
-              </div>
-            </div>
-          </Tooltip>
-          <Tooltip title="" placement="bottom-start">
-            <div className="form_input">
-              <p>Duration</p>
-              <div htmlFor="title" className="label">
-                <div
-                  id="title"
-                  name="title"
-                  type="text"
-                  placeholder="All"
-                  className="input"
-                >Last 12 months</div>
-                <KeyboardArrowDownIcon className="icon" />
-              </div>
-            </div>
-          </Tooltip>
-
-          <Tooltip title="" placement="bottom-start">
-            <div className="form_input">
-              <p>Claim Type</p>
-              <div htmlFor="title" className="label">
-                <div
-                  id="title"
-                  name="title"
-                  type="text"
-                  placeholder="Claim"
-                  className="input"
-                >Claims</div>
-                <KeyboardArrowDownIcon className="icon" />
-              </div>
-            </div>
-          </Tooltip>
-
-          <Tooltip title="" placement="bottom-start">
-            <div className="form_input">
-              <p>Currency</p>
-              <div htmlFor="title" className="label">
-                <div
-                  id="title"
-                  name="title"
-                  type="text"
-                  placeholder="All"
-                  className="input"
-                >ALL</div>
-                <KeyboardArrowDownIcon className="icon" />
-              </div>
-            </div>
-          </Tooltip> */}
-
           <Button
             variant="contained"
             sx={{
               pr: "20px",
               pl: "20px",
               ml: "10px",
-
               textTransform: "uppercase ! important",
               opacity: "0.8",
             }}
