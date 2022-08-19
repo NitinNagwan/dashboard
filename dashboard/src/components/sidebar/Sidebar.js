@@ -57,23 +57,35 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-
 import ListItemText from "@mui/material/ListItemText";
-
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import StackedBarChartIcon from "@mui/icons-material/StackedBarChart";
+import AppBar from "@mui/material/AppBar";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Navbar from "../../components/navbar/Navbar";
+import CloseIcon from "@mui/icons-material/Close";
 import { makeStyles } from "@mui/styles";
 
 const useStyle = makeStyles({
   sidebar: {
     background: `linear-gradient(240deg, #325da8a4 40%, #3355b3 70%) !important`,
     height: "100vh",
+    position: "relative",
   },
-
+  closeIcon: {
+    position: "absolute",
+    top: "5px",
+    right: "5px",
+    fontSize: "25px",
+    fontWeight: "bolder",
+    color: "#eee",
+    zIndex: "2",
+    border: "1px solid #ddd",
+  },
   listItems: {
     color: "#eee",
     opacity: "1",
@@ -91,7 +103,7 @@ const useStyle = makeStyles({
   },
 });
 
-const drawerWidth = 350;
+const drawerWidth = 320;
 const arr = [
   "Main",
   "Manage Claims",
@@ -121,7 +133,11 @@ function Sidebar(props) {
   };
   const drawer = (
     <div className={classes.sidebar}>
-      <Toolbar>
+          
+      <CloseIcon 
+       onClick={handleDrawerToggle}
+       className={classes.closeIcon} />
+      <Toolbar sx={{ backgroundColor: "#172e6d", position: "relative" }}>
         <Typography sx={{ fontSize: "22px", fontWeight: "800", color: "#eee" }}>
           Dashboard
         </Typography>
@@ -155,39 +171,81 @@ function Sidebar(props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
   return (
-    <Box
-      component="nav"
-      sx={{ width: { sm: 0, md: drawerWidth }, flexShrink: { sm: 0 } }}
-      aria-label="mailbox folders"
-    >
-      {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-      <Drawer
-        container={container}
-        variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{
-          keepMounted: true, // Better open performance on mobile.
-        }}
+    <>
+      <AppBar
         sx={{
-          display: { xs: "block", sm: "block", md: "none" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
+          backgroundColor: "#fff",
         }}
       >
-        {drawer}
-      </Drawer>
-      <Drawer
-        className="drawer"
-        variant="permanent"
-        sx={{
-          display: { xs: "none", sm: "none", md: "block" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
-        }}
-        open
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: {
+              xs: "space-between",
+              sm: "space-between",
+              md: "space-between",
+              lg: "flex-end",
+            },
+          }}
+        >
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ display: { md: "none" }, color: "#676b79" }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            noWrap
+            component="div"
+            sx={{ display: "flex", alignItems: "center" }}
+          >
+            <Navbar />
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { sm: 0, md: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
       >
-        {drawer}
-      </Drawer>
-    </Box>
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "block", md: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+        <Drawer
+          className="drawer"
+          variant="permanent"
+          sx={{
+            display: { xs: "none", sm: "none", md: "block" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+          open
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+    </>
   );
 }
 

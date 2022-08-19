@@ -6,6 +6,7 @@ import {
   FormControl,
   MenuItem,
   Select,
+  Toolbar,
   Typography,
 } from "@mui/material";
 const inputs = [
@@ -140,7 +141,15 @@ function Main() {
   return (
     <>
       <div className="charts">
-        <h2>Dashboard</h2>
+        <h2
+          sx={{
+            marginLeft: { xs: "3px", sm: "10px", md: "15px" },
+            fontWeight: "bold",
+            fontSize: "23px",
+          }}
+        >
+          Dashboard
+        </h2>
         <form className="form_inputs">
           {inputs.map((input) => {
             return (
@@ -148,11 +157,15 @@ function Main() {
                 key={input.label}
                 variant="standard"
                 sx={{
-                  marginLeft: "15px",
-                  minWidth: 170,
+                  marginLeft: { xs: "3px", sm: "10px", md: "15px" },
+                  minWidth: { xs: 50, sm: 90, md: 170 },
                 }}
               >
-                <Typography className="label">{input.label}</Typography>
+                <Typography
+                  sx={{ fontSize: { xs: "8px", sm: "8px", md: "13px" } }}
+                >
+                  {input.label}
+                </Typography>
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
@@ -160,10 +173,18 @@ function Main() {
                   value={action ? action : input.content}
                   onChange={handleAction}
                   label="action"
+                  sx={{ fontSize: { sm: "13px", xs: "9px", md: "16px" } }}
                 >
-                 
                   {input.menu.map((item) => {
-                    return <MenuItem key={item.name} value={item.value}>{item.name}</MenuItem>;
+                    return (
+                      <MenuItem
+                        key={item.name}
+                        value={item.value}
+                        sx={{ fontSize: { xs: "13px", md: "16px" } }}
+                      >
+                        {item.name}
+                      </MenuItem>
+                    );
                   })}
                 </Select>
               </FormControl>
@@ -175,11 +196,15 @@ function Main() {
                 key={input.label}
                 variant="standard"
                 sx={{
-                  marginLeft: "15px",
-                  minWidth: 170,
+                  marginLeft: { xs: "3px", sm: "10px", md: "15px" },
+                  minWidth: { xs: 50, sm: 90, md: 170 },
                 }}
               >
-                <Typography className="label">{input.label}</Typography>
+                <Typography
+                  sx={{ fontSize: { xs: "8px", sm: "8px", md: "13px" } }}
+                >
+                  {input.label}
+                </Typography>
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
@@ -187,9 +212,14 @@ function Main() {
                   value={duration ? duration : input.content}
                   onChange={handleDuration}
                   label="Age"
+                  sx={{ fontSize: { sm: "13px", xs: "9px", md: "16px" } }}
                 >
                   {input.menu.map((item) => {
-                    return <MenuItem key={item.name}  value={item.value}>{item.name}</MenuItem>;
+                    return (
+                      <MenuItem key={item.name} value={item.value}>
+                        {item.name}
+                      </MenuItem>
+                    );
                   })}
                 </Select>
               </FormControl>
@@ -201,11 +231,15 @@ function Main() {
                 key={input.label}
                 variant="standard"
                 sx={{
-                  marginLeft: "15px",
-                  minWidth: 170,
+                  marginLeft: { xs: "3px", sm: "10px", md: "15px" },
+                  minWidth: { xs: 50, sm: 90, md: 170 },
                 }}
               >
-                <Typography className="label">{input.label}</Typography>
+                <Typography
+                  sx={{ fontSize: { xs: "8px", sm: "8px", md: "13px" } }}
+                >
+                  {input.label}
+                </Typography>
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
@@ -213,10 +247,14 @@ function Main() {
                   value={type ? type : input.content}
                   onChange={handleType}
                   label="Age"
+                  sx={{ fontSize: { sm: "13px", xs: "9px", md: "16px" } }}
                 >
-                 
                   {input.menu.map((item) => {
-                    return <MenuItem key={item.name}  value={item.value}>{item.name}</MenuItem>;
+                    return (
+                      <MenuItem key={item.name} value={item.value}>
+                        {item.name}
+                      </MenuItem>
+                    );
                   })}
                 </Select>
               </FormControl>
@@ -228,11 +266,15 @@ function Main() {
                 key={input.label}
                 variant="standard"
                 sx={{
-                  marginLeft: "15px",
-                  minWidth: 170,
+                  marginLeft: { xs: "3px", sm: "10px", md: "15px" },
+                  minWidth: { xs: 50, sm: 90, md: 170 },
                 }}
               >
-                <Typography className="label">{input.label}</Typography>
+                <Typography
+                  sx={{ fontSize: { xs: "8px", sm: "8px", md: "13px" } }}
+                >
+                  {input.label}
+                </Typography>
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
@@ -240,10 +282,14 @@ function Main() {
                   value={currency ? currency : input.content}
                   onChange={handleCurrency}
                   label="Age"
+                  sx={{ fontSize: { sm: "13px", xs: "9px", md: "16px" } }}
                 >
-                  
                   {input.menu.map((item) => {
-                    return <MenuItem key={item.value}  value={item.value}>{item.name}</MenuItem>;
+                    return (
+                      <MenuItem key={item.value} value={item.value}>
+                        {item.name}
+                      </MenuItem>
+                    );
                   })}
                 </Select>
               </FormControl>
@@ -252,25 +298,22 @@ function Main() {
           <Button
             variant="contained"
             sx={{
-              pr: "20px",
-              pl: "20px",
+              paddingRight: { xs: "7px", sm: "20px" },
+              paddingLeft: { xs: "7px", sm: "20px" },
               ml: "10px",
-              textTransform: "uppercase ! important",
               opacity: "0.8",
             }}
           >
             Apply
           </Button>
         </form>
+        <Charts />
       </div>
-      <Charts />
 
       <div className="seperator">
         <h2>Users</h2>
         <div className="horizontal_line"></div>
       </div>
-
-      <Charts />
     </>
   );
 }
