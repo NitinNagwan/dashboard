@@ -69,6 +69,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Navbar from "../../components/navbar/Navbar";
 import CloseIcon from "@mui/icons-material/Close";
 import { makeStyles } from "@mui/styles";
+import ResponsiveAppBar from "../../components/navbar/Navbar";
+import Footer from "../footer/Footer";
 
 const useStyle = makeStyles({
   sidebar: {
@@ -85,13 +87,19 @@ const useStyle = makeStyles({
     color: "#eee",
     zIndex: "2",
     border: "1px solid #ddd",
+
   },
   listItems: {
     color: "#eee",
-    opacity: "1",
   },
   listItem: {
     padding: "10px 0",
+    opacity: "0.7",
+    '&:active': {
+      opacity: "1",
+      backgroundColor: "#3e579c94 !important",
+      borderRight: "6px solid #172c6e",
+    },
   },
   icon: {
     fontSize: "35px !important",
@@ -136,8 +144,9 @@ function Sidebar(props) {
           
       <CloseIcon 
        onClick={handleDrawerToggle}
+       sx={{ display: { md: "none" }}}
        className={classes.closeIcon} />
-      <Toolbar sx={{ backgroundColor: "#172e6d", position: "relative" }}>
+      <Toolbar sx={{ backgroundColor: "#172e6d"}}>
         <Typography sx={{ fontSize: "22px", fontWeight: "800", color: "#eee" }}>
           Dashboard
         </Typography>
@@ -155,6 +164,7 @@ function Sidebar(props) {
             <ListItem
               key={text}
               sx={{ p: "3", cursor: "pointer" }}
+              // id={}
               className={active === text ? classes.active : ""}
             >
               <ListItemText
@@ -200,9 +210,9 @@ function Sidebar(props) {
           <Typography
             noWrap
             component="div"
-            sx={{ display: "flex", alignItems: "center" }}
+            sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
           >
-            <Navbar />
+            <ResponsiveAppBar />
           </Typography>
         </Toolbar>
       </AppBar>
@@ -245,6 +255,7 @@ function Sidebar(props) {
           {drawer}
         </Drawer>
       </Box>
+      
     </>
   );
 }

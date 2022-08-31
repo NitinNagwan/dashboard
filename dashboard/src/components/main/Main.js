@@ -9,6 +9,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+import Footer from "../footer/Footer";
 const inputs = [
   {
     label: "Select Type",
@@ -314,6 +315,8 @@ function Main() {
         <h2>Users</h2>
         <div className="horizontal_line"></div>
       </div>
+
+      <Footer/> 
     </>
   );
 }

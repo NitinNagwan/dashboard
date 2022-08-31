@@ -1,7 +1,4 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Avatar from "@mui/material/Avatar";
@@ -183,10 +180,11 @@ const ResponsiveAppBar = () => {
               >
                 <Typography
                   sx={{
-                    width: "170px",
+                    width: {xs: '100px', sm: "170px"},
                     fontWeight: "500",
-                    fontSize: "20px",
+                    fontSize: {xs: '18px', md: "20px"},
                     p: "6px",
+                   
                   }}
                 >
                   {setting.name}

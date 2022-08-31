@@ -7,6 +7,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Main from "../../components/main/Main";
 import { makeStyles } from "@mui/styles";
 import Sidebar from "../../components/sidebar/Sidebar";
+import Footer from "../../components/footer/Footer";
+import DataTable from "../../components/table/Table";
+import EnhancedTable from "../../components/table/Table";
 
 const useStyle = makeStyles({
   sidebar: {
@@ -36,11 +39,14 @@ function Home(props) {
         sx={{
           flexGrow: 1,
           p: 3,
+          position: "relative"
         }}
       >
-        <Toolbar />
-        <Main />
+        <Toolbar  />
+        {/* <Main /> */}
+<EnhancedTable/>
       </Box>
+        {/* <Footer/> */}
     </Box>
   );
 }
