@@ -74,13 +74,7 @@ import axios from "axios";
 
 
 
-const req = {
-  page: 1,
-  numberOfItems: 15,
-  searchKey: "",
-  orderBy: 'desc',
-  sort: null,
-};
+
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjYxOTM2MjAwfQ.RjPHq0nrmTNIaAAjmzN1-8JuAwWlUJL-NLM6x-Vr9_g";
@@ -293,10 +287,17 @@ export default function EnhancedTable() {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
-  const [page, setPage] = React.useState(0);
+  const [page, setPage] = React.useState(1);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [data,setData] = React.useState('')
+  const req = {
+    page: page,
+    numberOfItems: 15,
+    searchKey: "",
+    orderBy: 'desc',
+    sort: null,
+  };
   
   React.useEffect(() => {
     axios
@@ -310,12 +311,17 @@ export default function EnhancedTable() {
         },
       }
     )
-    .then((res) =>{ setData(res.data.list)})
+    .then((res) =>{ setData(res.data.list)
+      console.log((res.data.totalLength/15)+1)
+    
+    })
     .catch((err) => console.log(err, " error response"))
-  }, [])
+  }, [page])
   
 
     console.log(data)
+
+   
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
@@ -352,6 +358,7 @@ export default function EnhancedTable() {
   };
 
   const handleChangePage = (event, newPage) => {
+    console.log(newPage)
     setPage(newPage);
   };
 
@@ -401,6 +408,7 @@ export default function EnhancedTable() {
                   return (
                     <TableRow
                       hover
+                      color="secondary"
                       //   onClick={(event) => handleClick(event, row.name)}
                       role="checkbox"
                       aria-checked={isItemSelected}
@@ -449,13 +457,13 @@ export default function EnhancedTable() {
           </Table>
         </TableContainer>
         <TablePagination    
-          rowsPerPageOptions={[5, 10, 25]}
+          // rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={data.length}
-          rowsPerPage={rowsPerPage}
+          // count={data.length}
+          // rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
+          // onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
       {/* <FormControlLabel

@@ -10,6 +10,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Footer from "../../components/footer/Footer";
 import DataTable from "../../components/table/Table";
 import EnhancedTable from "../../components/table/Table";
+import Test from "../../components/test/Test";
 
 const useStyle = makeStyles({
   sidebar: {
@@ -45,6 +46,7 @@ function Home(props) {
         <Toolbar  />
         {/* <Main /> */}
 <EnhancedTable/>
+{/* <Test/> */}
       </Box>
         {/* <Footer/> */}
     </Box>
